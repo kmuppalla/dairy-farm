@@ -1,0 +1,18 @@
+.row{
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  
+  .container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin: 0;
+}
+.item{
+    flex-basis: 33%;
+    margin-top: 10px;  
+}
+.container{
+    padding-top: 20px;
+}

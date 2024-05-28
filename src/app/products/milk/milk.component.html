@@ -1,0 +1,7 @@
+<div class="padding_container"><h2>Milk Products</h2>
+    <div class="container">                
+                <div class="item" *ngFor="let milk of base_product; let  i=index">
+                    <app-product-tile [base_product]="milk" [base_productId]='milk.id + "milk"' (addToCart)="addToCart($event)"></app-product-tile>                    
+                </div>
+    </div>
+</div>

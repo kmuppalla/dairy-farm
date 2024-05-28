@@ -1,0 +1,14 @@
+<div class="col">
+    <div class="row">
+        <!-- <ng-template [ngIf]="products === null">
+            <div>Cart is Empty</div>
+          </ng-template>        -->
+        <div *ngIf="products === null"> Cart is Empty
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="item" *ngFor="let product of products; let  i=index">
+        <app-product-tile [base_product]="product.value" [base_productId]='product.value.id' [cartQuantity]='product.quantity' ></app-product-tile>              
+    </div>    
+</div>

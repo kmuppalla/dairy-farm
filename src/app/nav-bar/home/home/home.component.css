@@ -1,0 +1,45 @@
+#carouselExampleIndicators {
+    width: 100%; /* Make the carousel cover the entire width of the screen */
+    height: 300px; /* Set the height of the carousel to 300px */
+  }
+
+  .container{
+    width: 100%;
+  }
+  
+  .carousel-inner {
+    height: 100%; /* Make the carousel inner container fill the entire height of the carousel */
+  }
+  
+  .carousel-item {
+    width: 100%; /* Make each carousel item cover the entire width of the carousel */
+    height: 100%; /* Make each carousel item fill the entire height of the carousel */
+    background-color: black;
+  }
+  
+  .carousel-item>img {
+    width: 100%; /* Make the images fill the entire width of their parent container */
+    height: 100%; /* Make the images fill the entire height of their parent container */
+    object-fit: scale-down; /* Ensure the image covers the entire container, maintaining aspect ratio */
+
+    
+  }
+
+  .row{
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  
+  .container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin: 0;
+}
+.item{
+    flex-basis: 33%;
+    margin-top: 10px;  
+}
+.container{
+    padding-top: 20px;
+}

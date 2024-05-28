@@ -1,0 +1,22 @@
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="base_product.imageUrl" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ base_product.name }}</h5>
+      <p class="card-text">{{ base_product.description }}</p>
+      <div class="dropdown">
+        <button style="flex-wrap: wrap;"class="btn btn-secondary dropdown-toggle" type="button" id="dropdown-item" 
+        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+        >
+          Quantity  : {{ quantity }}
+          
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#" *ngFor="let number of numbers" (click)="increment(number)" >{{ number }}</a>
+          </div>
+        </button>        
+      </div> 
+      
+      <button *ngIf="!isAddToCartDisabled" type="button" class="btn btn-primary" (click)="addToCart()" 
+      [disabled]="isAddToCartDisabled" >Add To Cart </button>      
+    </div>
+  </div>
+  <!-- *ngIf="!cart_click" -->
