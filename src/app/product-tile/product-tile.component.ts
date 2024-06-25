@@ -56,8 +56,16 @@ export class ProductTileComponent {
     //this.dataService.setCart({'key':'milk', 'value':this.quantity});
     this.dataService.setCart({'key': this.base_product.id, 'quantity': this.quantity, 'value': this.base_product});
     // Store cart to Firebase
-    this.dataStorageService.storeCart();
-  }  
+    this.dataStorageService.storeCart({'key': this.base_product.id, 'quantity': this.quantity, 'value': this.base_product});
+  }
+
+  // // deleteItemFromCart(data: any){
+  // //   this.dataStorageService.fetchCart.subscribe(cartArray => {
+      
+
+  // //   }
+  //   )
+  //}
 
   increment(x:any){
     this.quantity = x;
@@ -77,7 +85,9 @@ export class ProductTileComponent {
 
   getQuantity(){
     if(this.cartQuantity != null){
-    this.quantity = this.cartQuantity;}else this.quantity = 1;
+    this.quantity = this.cartQuantity;}
+    else 
+      this.quantity = 1;
   }
 
   get isAddToCartDisabled(): boolean {

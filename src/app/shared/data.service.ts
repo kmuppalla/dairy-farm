@@ -15,8 +15,6 @@ export class DataService {
   public cartState = new BehaviorSubject<any>(null);
 
   public homePage = new BehaviorSubject<boolean>(true);
-
-  // private cart : cart;
   public cartQuantity = new BehaviorSubject<{}>({});
 
   setCart(data: any) {
@@ -39,9 +37,8 @@ export class DataService {
           }
       }
     }
-    // console.log("temp", temp)
-    // console.log("x", x)
     this.cartState.next(x);
+    console.log(x);
   }
 
 }

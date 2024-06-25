@@ -30,9 +30,9 @@ export class NavBarComponent {
     this.dataService.cartClicked.next(passClick);    
   
   }
-  onFetchCart(){
-    this.dataStorage.fetchCart();
-    this.currentCartFetch = this.dataStorage.fetchCart();
+  // onFetchCart(){
+  //   this.dataStorage.fetchCart();
+  //   // this.currentCartFetch = this.dataStorage.fetchCart();
 
-   }
+  //  }
 }

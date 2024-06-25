@@ -2,6 +2,7 @@
 import { observable } from 'rxjs';
 import { DataService } from './../../shared/data.service';
 import { Component, OnInit } from '@angular/core';
+import { DataStorageService } from '../../shared/data-storage.service';
 
 @Component({
   selector: 'app-cart',
@@ -13,34 +14,16 @@ export class CartComponent implements OnInit{
   cartQuantity: {};
   totalQuantity: any;
   clicked: boolean;
-  products:[] = [];
+  products: any = [];
 
-  constructor(private dataService: DataService){
+  constructor(private dataService: DataService, private dataStorageService: DataStorageService){
   }
 
   ngOnInit(): void {
-    if (this.dataService.cartState.subscribe(cartArray => cartArray == null)){
-      this.dataService.cartState.subscribe(cartArray => {
-        this.totalQuantity = cartArray;
-        this.products = cartArray;
-        console.log(this.products)      
-      });  
-
-    }
-    else{
-      this.dataService.cartState.subscribe(cartArray => {
-        this.totalQuantity = cartArray;
-        this.products = cartArray;
-        console.log(this.products)
+      this.dataStorageService.fetchCart().subscribe(cartItems => {
+        this.products = cartItems;
+        console.log("cartItems", cartItems);
       });
-
-    }
-    // this.dataService.cartState.subscribe(cartArray => {
-    //   this.totalQuantity = cartArray;
-    //   this.products = cartArray;
-    //   console.log(this.products)
-    
-    // });
+      console.log("products", this.products);
+      }
   }  
-
-}

@@ -16,7 +16,8 @@
       </div> 
       
       <button *ngIf="!isAddToCartDisabled" type="button" class="btn btn-primary" (click)="addToCart()" 
-      [disabled]="isAddToCartDisabled" >Add To Cart </button>      
+      [disabled]="isAddToCartDisabled" >Add To Cart </button>    
+      <button *ngIf="!isAddToCartDisabled" type="button" class="btn btn-primary" (click)="deleteItemFromCart()">Remove</button>  
     </div>
   </div>
   <!-- *ngIf="!cart_click" -->
