@@ -33,7 +33,6 @@ export class DataService {
           }
           else {
             x = [...temp, data];
-
           }
       }
     }
